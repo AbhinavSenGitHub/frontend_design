@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Content with Swiper Background</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css">  
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-black text-white p-4 pt-6">
+      <div class="container mx-auto flex justify-around">
+        <div>
+          <img class="h-[26px] mt-1" src="./image/logo.png" />
+        </div>
+        <ul class="flex space-x-8 justify-center">
+          <li class="hover:text-gray-400 cursor-pointer">PRODUCTS</li>
+          <li class="hover:text-gray-400 cursor-pointer">PRODUCTS</li>
+          <li class="hover:text-gray-400 cursor-pointer">APP & GAMES</li>
+          <li class="hover:text-gray-400 cursor-pointer">FEATURES</li>
+          <li class="hover:text-gray-400 cursor-pointer">SUPPORT</li>
+          <li class="hover:text-gray-400 cursor-pointer">ABOUT</li>
+        </ul>
+        <div>
+          <img class="h-[20px] my-0" src="./image/lock.png" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Static Content Section with Swiper Background -->
+    <div class="relative h-screen overflow-hidden">
+      <!-- Swiper Background -->
+      <div class="swiper-container absolute inset-0 z-0 h-full w-full">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div
+            class="swiper-slide bg-cover bg-center"
+            style="background-image: url('./image/background.png')"
+          ></div>
+
+          <!-- Slide 2 -->
+          <div
+            class="swiper-slide bg-cover bg-center"
+            style="
+              background-image: url('https://www.simedix.co/wp-content/uploads/2021/07/vrt-shakhes.jpg');
+            "
+          ></div>
+
+          <!-- Slide 3 -->
+          <div
+            class="swiper-slide bg-cover bg-center"
+            style="
+              background-image: url('https://blog.metaphysic.ai/wp-content/uploads/2022/06/Synthetic-101-%E2%80%93-VR-as-an-extension-to-normal-life.jpg');
+            "
+          ></div>
+        </div>
+      </div>
+
+      <!-- Static Content Overlay -->
+      <div
+        class="relative z-10 px-14 h-full w-1/2 flex flex-col justify-center text-white"
+      >
+        <h1 class="text-5xl font-bold uppercase mb-4">
+          Let your <br />
+          mind <span class="text-image-color">explore</span> <br />
+          new world
+        </h1>
+        <p class="text-2xl">
+          Playing electronic games, whether through consoles, computers, mobile
+          phones or another medium altogether. Gaming is a nuanced term that
+          suggests regular gameplay, possibly as a hobby.
+        </p>
+
+        <!-- Button -->
+        <!-- Button with Background Image -->
+        <button
+          class="w-[160px] h-[50px] mt-10 text-white font-bold rounded transition duration-300 button-bg uppercase"
+          style="
+            background-image: url('./image/Rectangle.png');
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          Buy now
+        </button>
+      </div>
+
+      <!-- Pagination (optional) -->
+      <div class="swiper-pagination absolute bottom-4 z-20"></div>
+
+      <!-- Navigation Buttons (optional) -->
+      <div class="swiper-button-prev z-20"></div>
+      <div class="swiper-button-next z-20"></div>
+    </div>
+
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        loop: true, // Enables continuous loop mode
+        autoplay: {
+          delay: 3000, // Time between slide transitions
+        },
+        pagination: {
+          el: ".swiper-pagination", // Enable pagination
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next", // Enable navigation buttons
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
